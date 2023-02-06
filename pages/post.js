@@ -3,6 +3,8 @@ import styles from "../styles/Home.module.css";
 import prisma from "../lib/prisma";
 
 export const getServerSideProps = async () => {
+  console.log("================== check env");
+  console.log(process.env);
   // this query grabs the data!
   const posts = await prisma.post.findMany({
     select: {
@@ -11,7 +13,6 @@ export const getServerSideProps = async () => {
       description: true,
     },
   });
-  console.log(process.env);
   return { props: { posts } };
 };
 
