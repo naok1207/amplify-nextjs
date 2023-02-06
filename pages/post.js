@@ -11,7 +11,7 @@ export const getServerSideProps = async () => {
       description: true,
     },
   });
-  console.log(process.env.DATABASE_URL);
+  console.log(process.env);
   return { props: { posts } };
 };
 
